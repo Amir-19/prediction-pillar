@@ -7,7 +7,7 @@ class RecurrentNet(nn.Module):
     def __init__(self, dim_input, num_hidden, truncation, step_size = 0.1):
         super(RecurrentNet, self).__init__()
         self.num_hidden = num_hidden
-        self.rnn_cell = nn.GRUCell(dim_input, self.num_hidden)
+        self.rnn_cell = nn.RNNCell(dim_input, self.num_hidden)
         self.linear = nn.Linear(self.num_hidden, 1)
         self.truncation = truncation
         self.k = 0
