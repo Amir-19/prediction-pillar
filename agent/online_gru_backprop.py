@@ -3,9 +3,9 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 
-class RecurrentNet(nn.Module):
+class GRUNet(nn.Module):
     def __init__(self, dim_input, num_hidden, truncation, step_size = 0.1):
-        super(RecurrentNet, self).__init__()
+        super(GRUNet, self).__init__()
         self.num_hidden = num_hidden
         self.rnn_cell = nn.GRUCell(dim_input, self.num_hidden)
         self.linear = nn.Linear(self.num_hidden, 1)
@@ -17,7 +17,7 @@ class RecurrentNet(nn.Module):
         self.targets = []
         self.criterion = nn.MSELoss()
         self.optimizer = optim.SGD(self.parameters(), lr=step_size)
-
+        #self.optimizer = optim.Adam(self.parameters(), lr=step_size)
     def reset_hidden_state(self):
         self.h_t = torch.zeros((1, self.num_hidden), dtype=torch.double)
         #TODO: is this necessary

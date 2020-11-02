@@ -64,5 +64,20 @@ class RecurrentGeoffTask:
         y = torch.from_numpy(y.astype('d'))
         return o, y
 
+    def get_sample_zero_input(self):
+        """
+
+            :return: a sample from the geoff task x as the input and y as the output
+        """
+        o = np.random.randint(2, size=(self.m, 1))#.astype("float")
+        x = np.concatenate((self.s.T,o))
+        if self.noise:
+            y = self.calculate_output(x) + np.random.normal(self.mu_epsilon, self.sigma_epsilon, 1)[0]
+        else:
+            y = self.calculate_output(x)
+
+        o = torch.from_numpy(o.T.astype('d'))
+        y = torch.from_numpy(y.astype('d'))
+        return o, y
     def state_restart(self):
         self.s = np.zeros((1,self.n))

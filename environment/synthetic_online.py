@@ -21,5 +21,15 @@ class MackeyGlass():
             self.timeseries = self.history[-1] + (0.2 * xtau / (1.0 + xtau ** 10) - \
                                         0.1 * self.history[-1]) / self.delta_t
         # TODO: check why tanh
-        return np.tanh(self.timeseries - 1)
-        #return self.timeseries
+        #return np.tanh(self.timeseries - 1)
+        return self.timeseries
+
+class MSO():
+
+    def __init__(self):
+        self.t = 0
+    def get_sample(self):
+        x = np.sin(0.2 * self.t) + np.sin(0.311 * self.t) \
+            + np.sin(0.42 * self.t) + np.sin(0.51 * self.t)
+        self.t += 1
+        return x
