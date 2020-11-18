@@ -7,17 +7,17 @@ import torch.nn as nn
 import torch.optim as optim
 from setuptools import setup, find_packages
 
-setup(name='pytorch-esn',
-      version='1.2.4',
-      packages=find_packages(),
-      install_requires=[
-          'torch',
-          'torchvision',
-          'numpy'
-      ],
-      description="Echo State Network module for PyTorch.",
-      author='Stefano Nardo',
-      author_email='stefano_nardo@msn.com',
-      license='MIT',
-      url="https://github.com/stefanonardo/pytorch-esn"
-      )
+
+def cmptAvg(alist):
+    avg = []
+    for i in range(len(alist)):
+        average = sum(alist) / len(alist)
+        avg.append(average)
+        return avg
+
+
+# main program
+intNumbers = [8, 7, 5, 6, 9, 3, 2, 4]
+realNumbers = [1.1, 5.4, 6.8, 9.3, 4.2, 3.8, 12.5]
+print("The average =", cmptAvg(intNumbers))
+print("The average =", cmptAvg(realNumbers))
