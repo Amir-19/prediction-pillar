@@ -2,7 +2,7 @@
 
 online state construction
 
-##This repository contains implementation for:
+## This repository contains implementation for:
 
 [Vanilla RNN](https://github.com/Amir-19/prediction-pillar/blob/main/agent/online_rnn_backprop.py)/ [GRU learned semi-online using Truncated Backprop](https://github.com/Amir-19/prediction-pillar/blob/main/agent/online_gru_backprop.py)
 
