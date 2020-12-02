@@ -1,6 +1,6 @@
 # prediction-pillaR
 
-#online state construction
+online state construction
 
 ##This repository contains implementation for:
 
