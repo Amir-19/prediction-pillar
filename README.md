@@ -19,5 +19,6 @@ online state construction
 [delayed mackeyglass prediction](https://github.com/Amir-19/prediction-pillar/blob/main/experiment/exp_mackeyglass_12steps.py)
 
 [episodic](https://github.com/Amir-19/prediction-pillar/blob/main/experiment/exp_rgt_episodic.py), [continuing recurrent geoff task](https://github.com/Amir-19/prediction-pillar/blob/main/experiment/exp_rgt_episodic.py)
+
 [BPTT performance on non-stationary geoff task experiment](https://github.com/Amir-19/prediction-pillar/blob/main/experiment/exp_rgt_non_stationary.py)
 
